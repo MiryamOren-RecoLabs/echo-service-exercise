@@ -1,0 +1,20 @@
+
+syntax = "proto3";
+package echo;
+
+// The echo service definition.
+service Echo{
+  rpc Echo (EchoRequest) returns (EchoReplay) {}
+  rpc EchoMany (EchoRequest) returns (EchoReplay) {}
+}
+
+// The request message
+message EchoRequest {
+  string word = 1;
+  int32 repetitionNum = 2;
+}
+
+// The response message 
+message EchoReplay {
+  string message = 1;
+}
